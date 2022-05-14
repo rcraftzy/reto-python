@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Chistes{% endblock %}</h1>
+{% endblock %}
+
+{% block action %}
+<a class= "button" href="{{ url_for('reto.guardado') }}">Mis chistes</a>
+{% endblock %}
+
+{% block main %}
+<div class='tob-bar'>
+		<h1>Encuentra un chiste que te haga reir</h1>
+		<form method='get'>
+			<input name='search' type='text' placeholder='¿Qué chiste quieres buscar, Chuck o Dad?'
+		</form>
+	</div>
+{% endblock %}
+
+{% block content %}
+<h3>A que el chiste te hace reir</h3>
+{% if gender['value'] %}
+	<h1 id='value' name='value' class='value'>{{ gender['value'] }}</h1>
+{% else %}
+	<h1 id='joke' name='value' class='joke'>{{ gender['joke'] }}</h1>
+{% endif %}
+{% endblock %}
+

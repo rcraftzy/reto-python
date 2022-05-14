@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block action %}
+	<a class="button" href="{{ url_for('reto.index') }}">Volver</a>
+{% endblock %}
+
+{% block header %}
+<h1>{% block title %}Guardado{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<ul>
+	{% for joke in jokes %}
+	<li class='jokes'>
+		<div>
+			{% if jokes['value'] %}
+			<h1 class='value'>{{ jokes['value'] }}</h1>
+			{% else %}
+			<h1 class='joke'>{{ jokes['value'] }}</h1>
+			{% endif %}
+		</div>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}
